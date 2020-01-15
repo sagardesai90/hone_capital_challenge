@@ -1,0 +1,21 @@
+body {
+  font-family: "Arial", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: #f7f7f7;
+  color: blue;
+}
+
+table {
+  width: 80%;
+  margin-top: 3rem;
+}
+
+h2 {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2rem;
+  width: 100%;
+  background: #323233;
+  color: #d6d6d6;
+}
