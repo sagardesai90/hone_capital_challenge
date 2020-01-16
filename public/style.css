@@ -3,10 +3,11 @@ body {
   -webkit-font-smoothing: antialiased;
   background: #f7f7f7;
   color: blue;
+  width: 100%;
 }
 
 table {
-  width: 80%;
+  width: 0%;
   margin-top: 3rem;
 }
 
@@ -14,8 +15,49 @@ h2 {
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
-  width: 100%;
+  padding: 1rem;
+  /* width: 100%; */
   background: #323233;
   color: #d6d6d6;
+}
+
+h3 {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 1rem;
+}
+
+.input {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 80%;
+  margin-left: 15%;
+}
+
+button {
+  justify-content: start;
+  width: 20%;
+}
+
+.table-data {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  width: 100%;
+}
+
+#table-row {
+  background: white;
+  padding: 2rem;
+  font-size: larger;
+}
+
+.graph-div {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }

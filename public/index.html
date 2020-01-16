@@ -11,19 +11,51 @@
     <!-- <h1>hi</h1> -->
     <!-- <table id="table-data" class="table"></table> -->
     <div>
-      <h2>Coin List</h2>
+      <h2>CoinList</h2>
     </div>
     <div class="input">
+      <button>Sort</button>
       <input placeholder="Your search" />
     </div>
-    <table align="center" id="table-data" class="table">
-      <tr>
-        <th>Name</th>
-        <th>Label</th>
-        <th>Price</th>
-      </tr>
-    </table>
+    <div class="tables">
+      <div>
+        <table align="center" id="exchange-data" class="table">
+          <div class="table-head">
+            <h3>Top Exchanges</h3>
+          </div>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Market Share</th>
+          </tr>
+          <!-- <tr id="table-data"></tr> -->
+        </table>
+      </div>
+      <div>
+        <table align="center" id="coin-data" class="table">
+          <div class="table-head">
+            <h3>Top Exchanges</h3>
+          </div>
+          <tr>
+            <th>Rank</th>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+          <!-- <tr id="table-data"></tr> -->
+        </table>
+      </div>
+    </div>
 
-    <script src="app.js"></script>
+    <div class="graph-div">
+      <div class="graph-one">
+        <canvas id="graph1" width="400" height="400"></canvas>
+      </div>
+      <div class="graph-two"></div>
+      <div class="graph-three"></div>
+      <div class="graph-four"></div>
+    </div>
+    <script type="module" src="./app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
   </body>
 </html>
