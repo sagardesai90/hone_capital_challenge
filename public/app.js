@@ -26,6 +26,7 @@ async function getTopCoins() {
     // console.log(filterRes, "top coins");
     createCoinRow(filterRes);
     chartRender(filterRes);
+    bitcoinDay(filterRes);
   } catch (e) {
     console.log(e);
     return e;
@@ -42,7 +43,7 @@ async function getExchanges() {
       data: { exchanges }
     } = topExchanges;
     let filteredRes = exchanges.filter(res => res.rank <= 10);
-    // console.log(filteredRes, "filteredRes");
+    console.log(topExchanges, "topExchanges");
     createExchangeRow(filteredRes);
   } catch (e) {
     console.log(e, "e");
@@ -88,9 +89,44 @@ const createCoinRow = res => {
   }
 };
 
+function bitcoinDay(res) {
+  let btc;
+  let btcHist;
+  if (res) {
+    btc = res[0];
+    const { history } = btc;
+    btcHist = history;
+    console.log(history, "history");
+    console.log(btc, "btc in day");
+  }
+  var ctx = document.getElementById("graph2");
+  var myLineChart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: btcHist,
+      datasets: [
+        {
+          label: "Price",
+          data: btcHist
+        }
+      ]
+    },
+    options: {
+      scales: {
+        yAxes: [
+          {
+            ticks: {
+              beginAtZero: false
+            }
+          }
+        ]
+      }
+    }
+  });
+}
+
 function chartRender(res) {
   var ctx = document.getElementById("graph1");
-  console.log(res, "res in chart");
   let labels = [];
   let prices = [];
   for (let i = 0; i < res.length; i++) {
@@ -139,5 +175,6 @@ function chartRender(res) {
     }
   });
 }
+bitcoinDay();
 getTopMarkets();
 getTopCoins();
