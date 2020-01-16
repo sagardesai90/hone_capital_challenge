@@ -6,6 +6,11 @@ body {
   width: 100%;
 }
 
+body,
+html {
+  height: 100%;
+}
+
 table {
   /* width: 0%; */
   margin-top: 3rem;
@@ -28,13 +33,13 @@ h3 {
   text-align: center;
   padding: 1rem;
 }
-/* 
+
 .input {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 80%;
   margin-left: 15%;
-} */
+}
 
 button {
   justify-content: start;
@@ -43,12 +48,12 @@ button {
 
 .table-data {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   width: 50%;
 }
 
 #table-row {
-  background: white;
+  /* background: white; */
   padding: 2rem;
   font-size: larger;
 }
@@ -59,7 +64,7 @@ button {
   width: 70%;
   margin-left: 15%;
   padding: 2rem;
-  opacity: 70%;
+  opacity: 100%;
 }
 
 .tables {
@@ -68,5 +73,21 @@ button {
 }
 
 #particles-js {
-  background: #f7f7f7;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: -10;
+  top: 0;
+  left: 0;
+}
+
+particles-js canvas {
+  display: block;
+  vertical-align: bottom;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+  opacity: 1;
+  -webkit-transition: opacity 0.8s ease, -webkit-transform 1.4s ease;
+  transition: opacity 0.8s ease, transform 1.4s ease;
 }

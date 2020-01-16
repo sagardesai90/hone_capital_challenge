@@ -1,7 +1,7 @@
 {
   "particles": {
     "number": {
-      "value": 400
+      "value": 200
     },
     "color": {
       "value": "#fff"
@@ -10,7 +10,7 @@
       "type": "circle",
       "stroke": {
         "width": 1,
-        "color": "#ccc"
+        "color": "#eaeaea"
       },
       "image": {
         "src": "http://www.iconsdb.com/icons/preview/white/contacts-xxl.png"

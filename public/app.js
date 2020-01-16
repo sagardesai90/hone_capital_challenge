@@ -27,6 +27,7 @@ async function getTopCoins() {
     createCoinRow(filterRes);
     chartRender(filterRes);
     bitcoinDay(filterRes);
+    sortChange(filterRes);
   } catch (e) {
     console.log(e);
     return e;
@@ -43,7 +44,6 @@ async function getExchanges() {
       data: { exchanges }
     } = topExchanges;
     let filteredRes = exchanges.filter(res => res.rank <= 10);
-    console.log(topExchanges, "topExchanges");
     createExchangeRow(filteredRes);
   } catch (e) {
     console.log(e, "e");
@@ -70,18 +70,29 @@ const createExchangeRow = res => {
   }
 };
 
+function sortChange(res) {
+  if (res) {
+    let sorted = res;
+    sorted.sort(function(a, b) {
+      return b.change - a.change;
+    });
+  }
+}
+
 const createCoinRow = res => {
   let rows = [];
   for (let i = 0; i < res.length; i++) {
     let row = [];
     let rankRow = `<tr id="table-row"> <td>` + res[i].rank + `</td>`;
     let nameRow = `<td>` + res[i].name + `</td>`;
-    let marketShareRow = `<td>` + res[i].price + `</td></tr>`;
+    let priceRow = `<td>` + res[i].price + `</td>`;
     let symbolRow = `<td>` + res[i].symbol + `</td>`;
+    let changeRow = `<td>` + res[i].change + "%" + `</td></tr>`;
     row.push(rankRow);
     row.push(symbolRow);
     row.push(nameRow);
-    row.push(marketShareRow);
+    row.push(priceRow);
+    row.push(changeRow);
     rows.push(row);
   }
   for (let i = 0; i < rows.length; i++) {
@@ -96,7 +107,7 @@ function bitcoinDay(res) {
     btc = res[0];
     const { history } = btc;
     btcHist = history;
-    console.log(history, "history");
+    console.log(res, "res");
     console.log(btc, "btc in day");
   }
   var ctx = document.getElementById("graph2");
@@ -106,7 +117,7 @@ function bitcoinDay(res) {
       labels: btcHist,
       datasets: [
         {
-          label: "Price",
+          label: "Price of Bitcoin",
           data: btcHist
         }
       ]
@@ -133,14 +144,14 @@ function chartRender(res) {
     labels.push(res[i].name);
     prices.push(res[i].price);
   }
-  console.log(prices, "prices");
+
   var myChart = new Chart(ctx, {
     type: "bar",
     data: {
       labels: labels,
       datasets: [
         {
-          label: "Price",
+          label: "Top 10 Coins",
           data: prices,
           backgroundColor: [
             "rgba(255, 99, 132, 0.2)",

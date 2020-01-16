@@ -8,55 +8,56 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <div id="particles-js">
-      <!-- <h1>hi</h1> -->
-      <!-- <table id="table-data" class="table"></table> -->
+    <div id="particles-js"></div>
+    <!-- <h1>hi</h1> -->
+    <!-- <table id="table-data" class="table"></table> -->
+    <div>
+      <h2>CoinList</h2>
+    </div>
+    <!-- <div class="input">
+      <input placeholder="Your search" />
+      <button>Sort</button>
+    </div> -->
+    <div class="tables">
       <div>
-        <h2>CoinList</h2>
+        <table align="center" id="exchange-data" class="table">
+          <div class="table-head">
+            <h3>Top Exchanges</h3>
+          </div>
+          <tr>
+            <th>Rank</th>
+            <th>Name</th>
+            <th>Market Share</th>
+          </tr>
+          <!-- <tr id="table-data"></tr> -->
+        </table>
       </div>
-      <div class="input">
-        <button>Sort</button>
-        <!-- <input placeholder="Your search" /> -->
-      </div>
-      <div class="tables">
-        <div>
-          <table align="center" id="exchange-data" class="table">
-            <div class="table-head">
-              <h3>Top Exchanges</h3>
-            </div>
-            <tr>
-              <th>Rank</th>
-              <th>Name</th>
-              <th>Market Share</th>
-            </tr>
-            <!-- <tr id="table-data"></tr> -->
-          </table>
-        </div>
-        <div>
-          <table align="center" id="coin-data" class="table">
-            <div class="table-head">
-              <h3>Top Exchanges</h3>
-            </div>
-            <tr>
-              <th>Rank</th>
-              <th>Symbol</th>
-              <th>Name</th>
-              <th>Price</th>
-            </tr>
-            <!-- <tr id="table-data"></tr> -->
-          </table>
-        </div>
-      </div>
-
-      <div class="graph-div">
-        <div class="graph-one">
-          <canvas id="graph1" width="400" height="400"></canvas>
-        </div>
-        <div class="graph-two">
-          <canvas id="graph2" width="400" height="400"></canvas>
-        </div>
+      <div>
+        <table align="center" id="coin-data" class="table">
+          <div class="table-head2">
+            <h3>Top Exchanges</h3>
+          </div>
+          <tr>
+            <th>Rank</th>
+            <th>Symbol</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Change</th>
+          </tr>
+          <!-- <tr id="table-data"></tr> -->
+        </table>
       </div>
     </div>
+
+    <div class="graph-div">
+      <div class="graph-one">
+        <canvas id="graph1" width="400" height="400"></canvas>
+      </div>
+      <div class="graph-two">
+        <canvas id="graph2" width="400" height="400"></canvas>
+      </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
