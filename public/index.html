@@ -8,56 +8,62 @@
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <!-- <h1>hi</h1> -->
-    <!-- <table id="table-data" class="table"></table> -->
-    <div>
-      <h2>CoinList</h2>
-    </div>
-    <div class="input">
-      <button>Sort</button>
-      <input placeholder="Your search" />
-    </div>
-    <div class="tables">
+    <div id="particles-js">
+      <!-- <h1>hi</h1> -->
+      <!-- <table id="table-data" class="table"></table> -->
       <div>
-        <table align="center" id="exchange-data" class="table">
-          <div class="table-head">
-            <h3>Top Exchanges</h3>
-          </div>
-          <tr>
-            <th>Rank</th>
-            <th>Name</th>
-            <th>Market Share</th>
-          </tr>
-          <!-- <tr id="table-data"></tr> -->
-        </table>
+        <h2>CoinList</h2>
       </div>
-      <div>
-        <table align="center" id="coin-data" class="table">
-          <div class="table-head">
-            <h3>Top Exchanges</h3>
-          </div>
-          <tr>
-            <th>Rank</th>
-            <th>Symbol</th>
-            <th>Name</th>
-            <th>Price</th>
-          </tr>
-          <!-- <tr id="table-data"></tr> -->
-        </table>
+      <div class="input">
+        <button>Sort</button>
+        <!-- <input placeholder="Your search" /> -->
       </div>
-    </div>
+      <div class="tables">
+        <div>
+          <table align="center" id="exchange-data" class="table">
+            <div class="table-head">
+              <h3>Top Exchanges</h3>
+            </div>
+            <tr>
+              <th>Rank</th>
+              <th>Name</th>
+              <th>Market Share</th>
+            </tr>
+            <!-- <tr id="table-data"></tr> -->
+          </table>
+        </div>
+        <div>
+          <table align="center" id="coin-data" class="table">
+            <div class="table-head">
+              <h3>Top Exchanges</h3>
+            </div>
+            <tr>
+              <th>Rank</th>
+              <th>Symbol</th>
+              <th>Name</th>
+              <th>Price</th>
+            </tr>
+            <!-- <tr id="table-data"></tr> -->
+          </table>
+        </div>
+      </div>
 
-    <div class="graph-div">
-      <div class="graph-one">
-        <canvas id="graph1" width="400" height="400"></canvas>
+      <div class="graph-div">
+        <div class="graph-one">
+          <canvas id="graph1" width="400" height="400"></canvas>
+        </div>
+        <div class="graph-two">
+          <canvas id="graph2" width="400" height="400"></canvas>
+        </div>
       </div>
-      <div class="graph-two">
-        <canvas id="graph2" width="400" height="400"></canvas>
-      </div>
-      <div class="graph-three"></div>
-      <div class="graph-four"></div>
     </div>
-    <script type="module" src="./app.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      particlesJS.load("particles-js", "particles.json", function() {
+        console.log("particles.json loaded...");
+      });
+    </script>
+    <script type="module" defer="defer" src="./app.js"></script>
   </body>
 </html>
