@@ -2,7 +2,7 @@ body {
   font-family: "Arial", sans-serif;
   -webkit-font-smoothing: antialiased;
   /* background: #f7f7f7; */
-  color: blue;
+  color: rgb(109, 95, 95);
   width: 100%;
 }
 
@@ -24,7 +24,7 @@ h2 {
   width: 50%;
   margin-left: 25%;
   /* background: #323233; */
-  color: rgb(36, 49, 167);
+  color: #323233;
 }
 
 h3 {
@@ -37,8 +37,8 @@ h3 {
 .input {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 80%;
-  margin-left: 15%;
+  /* width: 80%; */
+  /* margin-left: 15%; */
 }
 
 button {

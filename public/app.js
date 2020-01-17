@@ -1,32 +1,15 @@
 //returns a list of top 10 coins
-async function getTopMarkets() {
-  try {
-    let response = await fetch("https://api.coinranking.com/v1/public/markets");
-    let items = await response.json();
-    const {
-      data: { markets }
-    } = items;
-    let filteredRes = markets.filter(res => res.rank < 10);
-    // console.log(filteredRes, "filteredRes");
-  } catch (e) {
-    console.log(e, "e");
-    return e;
-  }
-}
-
 async function getTopCoins() {
   try {
     let response = await fetch("https://api.coinranking.com/v1/public/coins");
     let items = await response.json();
-    // console.log(items, "items");
     const {
       data: { coins }
     } = items;
     let filterRes = coins.filter(res => res.rank <= 10);
-    // console.log(filterRes, "top coins");
     createCoinRow(filterRes);
-    chartRender(filterRes);
-    bitcoinDay(filterRes);
+    barGraph(filterRes);
+    lineGraph(filterRes);
     sortChange(filterRes);
   } catch (e) {
     console.log(e);
@@ -100,15 +83,13 @@ const createCoinRow = res => {
   }
 };
 
-function bitcoinDay(res) {
+function lineGraph(res) {
   let btc;
   let btcHist;
   if (res) {
     btc = res[0];
     const { history } = btc;
     btcHist = history;
-    console.log(res, "res");
-    console.log(btc, "btc in day");
   }
   var ctx = document.getElementById("graph2");
   var myLineChart = new Chart(ctx, {
@@ -136,7 +117,7 @@ function bitcoinDay(res) {
   });
 }
 
-function chartRender(res) {
+function barGraph(res) {
   var ctx = document.getElementById("graph1");
   let labels = [];
   let prices = [];
@@ -186,6 +167,5 @@ function chartRender(res) {
     }
   });
 }
-bitcoinDay();
-getTopMarkets();
+lineGraph();
 getTopCoins();
