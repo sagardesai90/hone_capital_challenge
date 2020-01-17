@@ -169,3 +169,7 @@ function lineGraph(res) {
   });
 }
 ```
+
+## Particles Background
+
+I used particles.js to create the background. You can find the code for that in the index.html file on line 62, and in the style.css file under #particles-js and partciles-js canvas.
