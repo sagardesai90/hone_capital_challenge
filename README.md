@@ -11,6 +11,10 @@ Make a single page web app that returns a data table with relevant data, along w
 - Chart JS
 - Particle JS
 
+## Instructuctions
+
+From root, run: `npm run start` or if using VS Code, run a live server.
+
 ## Overall Approach
 
 The first things I wanted to do was select the right data source. I initially selected CoinAPI, but came across a 503 error, indicating serverside issues, so decided to go with another API, the Coinranking API.
